@@ -107,7 +107,7 @@ function scripts_and_styles(){
                   <li class="contacs-number-tel"><span><?php echo do_shortcode('[xyz-ihs snippet="second-phone"]'); ?></span></li>
                   <!--<li class="contacs-number-tel"><span><a href="tel:79854455778">+7(985)445-57-78</a></span></li>-->
                   <li class="contacs-number-tel"><p>Почта:</p> </li>
-                  <li class="contacs-number-mail"><span><?php echo do_shortcode('[xyz-ihs snippet="email"]'); ?></span></li>
+                  <li class="contacs-number-mail"><span><a href="mailto:<?php echo do_shortcode('[xyz-ihs snippet="email"]'); ?>"><?php echo do_shortcode('[xyz-ihs snippet="email"]'); ?></a></span></li>
                 </ul>
               </div>
 

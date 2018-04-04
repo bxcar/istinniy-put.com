@@ -152,7 +152,16 @@
                 }
 
                 #line .wpcs_product_carousel_slider .product_image_container .product_thumb_link img {
-                    max-height: 600px;
+                    max-height: 300px;
+                    max-width: 300px;
+                }
+
+                #line .wpcs_product_carousel_slider .product_image_container #id-1175.product_thumb_link img,
+                #line .wpcs_product_carousel_slider .product_image_container #id-772.product_thumb_link img {
+                    max-height: 250px;
+                    max-width: 250px;
+                    margin-top: 25px;
+                    margin-bottom: 25px;
                 }
 
                 #line .wpcs_product_carousel_slider .another_carousel_header i.fa-angle-left {
