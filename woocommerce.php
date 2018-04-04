@@ -13,6 +13,7 @@
  */
 
 get_header(); ?>
+<?php if (function_exists('bxslider')) bxslider('slider-book-page'); ?>
         <? if ($_SERVER['REQUEST_URI']!='/shop/?orderby=price-desc') {?>
 	<?php if (is_singular("product")) { if (have_posts()) : while (have_posts()) : the_post(); ?><div class="container-fluid forem-description shop-bg"<?php $img = wp_get_attachment_image_src(get_post_meta(get_the_ID(), "previmg", true), 'full'); if ($img[0] != "") { ?> style="background-image:url('<?php echo $img[0]; ?>')"<?php } ?>>
 		<div class="description-container">
@@ -52,6 +53,16 @@ get_header(); ?>
 			<? } ?>
 		</div>
 	</div>
+
+<style>
+    .container .row {
+        padding-top: 0 !important;
+    }
+
+    .hero > .bx-wrapper {
+        margin-bottom: 0;
+    }
+</style>
 
 <?php
 get_footer();
