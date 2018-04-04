@@ -103,11 +103,11 @@ function scripts_and_styles(){
                  <div class="tel">
                  <ul class="contacs-number">
                   <li class="contacs-number-tel"><p>Телефон для заказа</p> </li>
-                  <li class="contacs-number-tel"><span><a href="tel:+79854455778">+7(985)445-57-78</a></span></li>
-                  <li class="contacs-number-tel"><span><a href="tel:+79858188439">+7(985)818-84-39</a></span></li>
+                  <li class="contacs-number-tel"><span><?php echo do_shortcode('[xyz-ihs snippet="first-phone"]'); ?></span></li>
+                  <li class="contacs-number-tel"><span><?php echo do_shortcode('[xyz-ihs snippet="second-phone"]'); ?></span></li>
                   <!--<li class="contacs-number-tel"><span><a href="tel:79854455778">+7(985)445-57-78</a></span></li>-->
                   <li class="contacs-number-tel"><p>Почта:</p> </li>
-                  <li class="contacs-number-mail"><span><a href="mailto:zakaz@iztinniy-put.com">zakaz@istinniy-put.com</a></span></li>
+                  <li class="contacs-number-mail"><span><?php echo do_shortcode('[xyz-ihs snippet="email"]'); ?></span></li>
                 </ul>
               </div>
 
