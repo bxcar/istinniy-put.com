@@ -116,5 +116,16 @@ var s = document.createElement('script'); s.type = 'text/javascript'; s.async = 
 <!-- {/literal} END JIVOSITE CODE -->
 <script src="/wp-content/themes/clear theme/js/fancybox/jquery.fancybox.min.js"></script>
 <link href='/wp-content/themes/clear theme/js/fancybox/jquery.fancybox.min.css' rel='stylesheet' type='text/css'>
+<script>
+    jQuery('#wpf_formbutton').attr('value', 'Добавить ответ');
+    jQuery('#wpf_user_email').attr('value', 'default@default.com');
+    jQuery('#wpforo-wrap #wpf-post-create .wpf-post-guest-name label').text('Имя');
+    jQuery('#wpf_user_name').attr('placeholder', 'Ваше имя');
+</script>
+<style>
+    #wpforo-wrap #wpf-post-create .wpf-post-guest-email {
+        display: none;
+    }
+</style>
 </body>
 </html>

@@ -196,3 +196,10 @@ function new_woocommerce_checkout_fields($fields){
     
     return $fields;
 }
+
+
+function my_remove_email_field_from_comment_form($fields) {
+    if(isset($fields['email'])) unset($fields['email']);
+    return $fields;
+}
+add_filter('comment_form_default_fields', 'my_remove_email_field_from_comment_form');

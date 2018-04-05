@@ -972,3 +972,9 @@ thead tr{
     width: 90%;
 	}
 }
+
+
+/*fx*/
+#wpf_formbutton {
+	width: auto !important;
+}

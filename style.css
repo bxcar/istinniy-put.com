@@ -312,7 +312,7 @@
       font-family: 'Roboto-ThinItalic';
 
       src: url('../fonts/segoeprb.ttf');
-    }  
+    }
     body {
         height: 100%;
         position: relative;
@@ -391,7 +391,7 @@
     }
 
     .navbar-default {
-        background-color:white !important;  
+        background-color:white !important;
         border: none;
     }
     .navbar-btn {
@@ -424,7 +424,7 @@
        outline: none;
     background: #436357;
     }
-        .btn-default:active, 
+        .btn-default:active,
     .btn-default:active:focus, .active
     {
         outline: none;
@@ -433,7 +433,7 @@
     color: white;
     background-color: #215441;
 }
-   /* .btn-default:active, 
+   /* .btn-default:active,
     .btn-default:active:focus, .active
     {
         font-family: 'Roboto-Medium', sans-serif;
@@ -494,7 +494,7 @@
         position: relative;
         top: -10px;
     }
-  
+
     .content-image {
         margin: 35px 0 50px;
     }
@@ -515,7 +515,7 @@
 
     /* прибить footer к странице*/
     .all_content {
-        min-height: calc(100vh - 400px); 
+        min-height: calc(100vh - 400px);
     }
     /*----------------*/
     .test a {
@@ -707,7 +707,7 @@
         background-size: 20%;
     }
     .price{
-      
+
     justify-content: space-around;
         font: 24px 'Roboto-Regular';
         color: black;
@@ -929,7 +929,7 @@ border-radius: 4px;
     @media screen and (max-width: 1600px) {
          .woocommerce-product-details__short-description {
     margin-left: 10%;
-  
+
 }
         .myt {
         position: absolute;
@@ -966,7 +966,7 @@ border-radius: 4px;
         }
     }
     @media screen and (max-width: 1200px) {
-       
+
       .myt {
         position: absolute;
         top: 0;
@@ -1113,7 +1113,7 @@ border-radius: 4px;
             .header-wrap > .navbar.navbar-default {
                 margin: 0;
             }
-        
+
             .header_right {
                 float: none;
                 border: 0;
@@ -1156,8 +1156,8 @@ border-radius: 4px;
             .header-wrap > .navbar.navbar-default {
                 margin: 0;
             }
-        
-       
+
+
         .names{
             font: 26px 'Roboto-Bold';
 
@@ -1245,7 +1245,7 @@ border-radius: 4px;
             margin-bottom: 40px;
             font-size: 40px;
             }
-            
+
             .img-flovers {
                 max-width: 200px;
             }
@@ -1262,7 +1262,7 @@ border-radius: 4px;
                 text-align: center;
                 margin: 0 auto;
                 position: relative;
-               
+
             }
             .header-wrap a {
                 font-size: 15px;
@@ -1393,12 +1393,12 @@ border-radius: 4px;
         .brendcobtent img {
             max-width: 85%;
         }
-        
+
         .btn.btn-default.navbar-btn {
             text-align: center;
             margin: 0 auto;
             position: relative;
-            
+
         }
         .header-wrap a {
             font-size: 15px;
@@ -1454,19 +1454,19 @@ border-radius: 4px;
     .field-client_name
     {
     width: 100%;
-    
+
 }
 .field-email{
        margin-left:0;
     width: 100%;
     float: left;
-  
+
 }
 .field-company_website{
     margin-left:0;
     margin-top: 10px;
     width: 100%;
-   
+
     margin-bottom: 10px;
 }
 .form-field submit{
@@ -1665,7 +1665,7 @@ border-radius: 4px;
         .header-wrap > .navbar.navbar-default {
             margin: 0;
         }
-    
+
         .header_right {
             float: none;
             border: 0;
@@ -1718,7 +1718,7 @@ border-radius: 4px;
         .header-wrap > .navbar.navbar-default {
             margin: 0;
         }
-    
+
     .collapse{
       /*  margin-top: 10px !important;*/
     }
@@ -1735,7 +1735,7 @@ border-radius: 4px;
     .img-height{
         height: 620px;
     }
-   
+
    }
 
 .entry-content p{
@@ -1792,4 +1792,3 @@ body .audiojs{
 body .audiojs .scrubber{
 	width:232px;
 }
-
