@@ -56,7 +56,12 @@
 		        foreach ($price as $post):
 		          the_post();?>
 			<!--Новый вывод данных-->
-			<div class="row novosti-wrapper">
+                    <?php if(in_category('premium')) { ?>
+                  <div class="row novosti-wrapper" style="box-shadow: 0 0 36px 0 rgba(40, 137, 101, 0.6);">
+                      <span class="premium-title">Премиум</span>
+                <?php } else { ?>
+                    <div class="row novosti-wrapper">
+                <?php } ?>
 			    <?php if (get_the_post_thumbnail(get_the_ID()) != "") { ?>
 			    <div class="col-md-3 col-sm-3 col-xs-12 text-center">
 			        <div class="about imgprev">

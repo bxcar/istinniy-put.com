@@ -978,3 +978,20 @@ thead tr{
 #wpf_formbutton {
 	width: auto !important;
 }
+
+.premium-title {
+	color: #288965;
+	text-align: center;
+	font-weight: 700;
+	display: block;
+	text-transform: uppercase;
+	font: 18px 'Roboto-Bold';
+	top: 20px;
+	position: absolute;
+	right: 60px;
+}
+
+.novosti-wrapper {
+	position: relative;
+	padding-top: 60px !important;
+}
