@@ -6,52 +6,52 @@
             margin-bottom: 30px;
         }
 
-        #brands-book .about-line.row {
+        .brands-book .about-line.row {
             display: flex;
             align-items: center;
         }
 
-        #brands-book ul.bxslider li {
+        .brands-book ul.bxslider li {
             padding-top: 10px;
         }
 
-        #brands-book .container > .bx-wrapper > .bx-controls-direction,
-        #brands-book .container > .bx-wrapper > .bx-has-pager {
+        .brands-book .container > .bx-wrapper > .bx-controls-direction,
+        .brands-book .container > .bx-wrapper > .bx-has-pager {
             display: none;
         }
 
-        #brands-book .container .bx-wrapper {
+        #brands-book.brands-book .container .bx-wrapper {
             height: 600px;
             margin-bottom: 0;
         }
 
-        #brands-book .bx-wrapper .bx-controls-direction a {
+        .brands-book .bx-wrapper .bx-controls-direction a {
             top: 43%;
         }
 
-        #brands-book .price-near-button {
+        .brands-book .price-near-button {
             font-size: 24px;
             margin-left: 20px;
         }
 
-        #brands-book .bx-controls-direction .bx-prev {
+        .brands-book .bx-controls-direction .bx-prev {
             left: -6%;
         }
 
-        #brands-book .bx-controls-direction .bx-next {
+        .brands-book .bx-controls-direction .bx-next {
             right: -6%;
         }
 
-        #brands-book .bx-wrapper .bx-pager.bx-default-pager a {
+        .brands-book .bx-wrapper .bx-pager.bx-default-pager a {
             border: 2px solid #288965;
         }
 
-        #brands-book .bx-wrapper .bx-pager.bx-default-pager a:hover,
-        #brands-book .bx-wrapper .bx-pager.bx-default-pager a.active {
+        .brands-book .bx-wrapper .bx-pager.bx-default-pager a:hover,
+        .brands-book .bx-wrapper .bx-pager.bx-default-pager a.active {
             background: #288965;
         }
 
-        #brands-book .contentsp {
+        .brands-book .contentsp {
             color: #288965;
             /*float: center;*/
             text-align: center;
@@ -62,15 +62,23 @@
             font: 28px 'Roboto-Bold';
         }
 
-        #brands-book .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-controls {
+        .brands-book .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-controls {
             display: none;
         }
 
         .bxslider-book li {
             padding-left: 10px;
         }
+
+        .mediafiles-gallery .bx-pager.bx-default-pager {
+            margin-top: 20px;
+        }
+
+        .mediafiles-gallery {
+            margin-top: 50px;
+        }
     </style>
-    <section id="brands-book" class="popular">
+    <section id="brands-book" class="popular brands-book">
         <div class="brendcobtent">
             <div class="container">
                 <h2 class="contentsp">Новинки</h2>
@@ -216,6 +224,80 @@
         </div>
     </section> <?php $post = get_post(68); ?><? /*           <section id="brands" class="popular">            <div class="bookcontent">              <div class="container margin-bottom">               <div class="contents products-area">                 <span class="contentp"><p><img class="img-responsive" src="images/book.png" alt="bible"></p></span>                 <span class="contentsp title"></span>                 <p><?php echo $post ->post_content; ?></p>                 <span class="shop"><p>Книги магазина</p></span>                 <div class="content-images">                  <div class="row">   				<?php	$post = get_post(102);	?>                   <div class="col-md-6 col-sm-6 centered">                    <div class="product-box">                      <a href="/product/free_account1/"><?php the_post_thumbnail('full',array('class' => 'img-responsive')); ?></a>                     <div class="items">                      <span class="name-book"><strong><?=$post->post_title; ?></strong></span>                     <div class="price"><?php echo $post ->post_content; ?><a href="/product/free_account1/" class="button-buy"> <i class="fa fa-shopping-basket" aria-hidden="true"></i></a>                     </div>                     </div>                    </div>                  </div>                  <?php	$post = get_post(97);	?>                  <div class="col-md-6 col-sm-6 centered">                    <div class="product-box">                      <a href="/product/free-account2/"><?php the_post_thumbnail('full',array('class' => 'img-responsive')); ?></a>                     <div class="items">                      <span class="name-book"><strong><?=$post->post_title; ?></strong></span>                     <div class="price"><?php echo $post ->post_content; ?><a href="/product/free-account2/" class="button-buy"> <i class="fa fa-shopping-basket" aria-hidden="true"></i></a>                     </div>                     </div>                    </div>                  </div>                                  <!--  <div class="col-md-3">                    <div class="product-box">                      <img class="img-responsive" src="images/litle-book.png" alt="">                       <div class="items">                       <span class="name-book"><strong>Новейший завет</strong></span>                     <div class="price">Бесплатно! <button class="button-buy"> <i class="fa fa-shopping-basket" aria-hidden="true"></i></button>                    </div>                                      </div>                 </div>              </div> -->            </div>          </div>        </div>      </section>*/ ?>
     <!--                    <a class="reference-recipe" href="http://demo.pinofran.com/demo/booksbog/lechenie/">            <div class="box">             <section class="headline col-sm-12">              <div class="container box-container">                <span>Рецепты лечения народными средствами</span>              </div>             </section>            </div>          </a> -->
+
+
+    <section id="mediafiles-gallery" class="popular brands-book mediafiles-gallery">
+        <div class="brendcobtent">
+            <div class="container">
+                <h2 class="contentsp">Медиафайлы</h2>
+                <div class="bx-wrapper" style="max-width: 100%;">
+                    <div class="bx-viewport"
+                         style="width: 100%; overflow: visible; position: relative; height: auto;">
+                        <ul class="bxslider bxslider-book bxslider-mediafiles" data-bxslider-mode="horizontal"
+                            data-bxslider-speed="500"
+                            data-bxslider-slide-margin="0" data-bxslider-start-slide="0"
+                            data-bxslider-random-start="false" data-bxslider-slide-selector=""
+                            data-bxslider-infinite-loop="true" data-bxslider-hide-control-on-end="false"
+                            data-bxslider-captions="true" data-bxslider-ticker="false"
+                            data-bxslider-ticker-hover="false" data-bxslider-adaptive-height="false"
+                            data-bxslider-adaptive-height-speed="500" data-bxslider-video="false"
+                            data-bxslider-responsive="true" data-bxslider-use-css="true" data-bxslider-easing="null"
+                            data-bxslider-preload-images="visible" data-bxslider-touch-enabled="true"
+                            data-bxslider-swipe-threshold="50" data-bxslider-one-to-one-touch="true"
+                            data-bxslider-prevent-default-swipe-x="true"
+                            data-bxslider-prevent-default-swipe-y="false"
+                            data-bxslider-pager="false" data-bxslider-pager-type="full"
+                            data-bxslider-pager-short-separator=" / " data-bxslider-pager-selector=""
+                            data-bxslider-controls="false" data-bxslider-next-text="Next"
+                            data-bxslider-prev-text="Prev"
+                            data-bxslider-next-selector="null" data-bxslider-prev-selector="null"
+                            data-bxslider-auto-controls="false" data-bxslider-start-text="Start"
+                            data-bxslider-stop-text="Stop" data-bxslider-auto-controls-combine="false"
+                            data-bxslider-auto-controls-selector="null" data-bxslider-auto="true"
+                            data-bxslider-pause="4000" data-bxslider-auto-start="true"
+                            data-bxslider-auto-direction="next" data-bxslider-auto-hover="false"
+                            data-bxslider-auto-delay="0" data-bxslider-min-slides="3" data-bxslider-max-slides="100"
+                            data-bxslider-move-slides="0" data-bxslider-slide-width="0"
+                            style="display: flex; align-items: center; width: 715%; position: relative; transition-duration: 0s; transform: translate3d(-6745px, 0px, 0px);">
+                            <?php
+                            if (get_field('gallery', 1475)) {
+                            foreach (get_field('gallery', 1475) as $item) { ?>
+                                <li style="float: left; list-style: none; position: relative;">
+                                    <div class="slide">
+                                        <a target="_blank" href="<?= $item['link'];?>">
+                                            <img src="<?= $item['image'];?>"
+                                                 class="img-responsive wp-post-image" alt="">
+                                        </a>
+                                    </div>
+                                </li>
+                            <?php }
+                            } ?>
+                        </ul>
+                    </div>
+                    <div class="bx-controls-direction">
+                        <a class="bx-prev" href="">Prev</a>
+                        <a class="bx-next" href="">Next</a>
+                    </div>
+                </div>
+                <script>
+                    var slider2 = jQuery('.bxslider-mediafiles').bxSlider({
+                        auto: true,
+                        minSlides: 3,
+                        maxSlides: 3,
+                        moveSlides: 3,
+                        slideWidth: 400,
+                        stopAutoOnClick: false,
+                        onSlideAfter: function () {
+                            slider2.stopAuto();
+                            slider2.startAuto();
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+
     <div class="container">
         <div class="thin"></div>
         <div class="row">
