@@ -203,3 +203,29 @@ function my_remove_email_field_from_comment_form($fields) {
     return $fields;
 }
 add_filter('comment_form_default_fields', 'my_remove_email_field_from_comment_form');
+
+
+/* Hook to init */
+add_action( 'init', 'tp_editor_background_color' );
+
+/**
+ * Add TinyMCE Button
+ */
+function tp_editor_background_color()
+{
+    /* Add the button/option in second row */
+    add_filter( 'mce_buttons_2', 'tp_editor_background_color_button', 1, 2 ); // 2nd row
+}
+
+/**
+ * Modify 2nd Row in TinyMCE and Add Background Color After Text Color Option
+ */
+function tp_editor_background_color_button( $buttons, $id )
+{
+    /* Only add this for content editor, you can remove this line to activate in all editor instance */
+    if ( 'content' != $id )
+        return $buttons;
+    /* Add the button/option after 4th item */
+    array_splice( $buttons, 4, 0, 'backcolor' );
+    return $buttons;
+}

@@ -61,6 +61,14 @@
                 text-transform: uppercase;
                 font: 28px 'Roboto-Bold';
             }
+
+            #brands-book .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-viewport > .bx-wrapper > .bx-controls {
+                display: none;
+            }
+
+            .bxslider-book li {
+                padding-left: 10px;
+            }
         </style>
         <section id="brands-book" class="popular">
             <div class="brendcobtent">
@@ -69,7 +77,7 @@
                     <div class="bx-wrapper" style="max-width: 100%;">
                         <div class="bx-viewport"
                              style="width: 100%; overflow: visible; position: relative; height: 600px;">
-                            <ul class="bxslider" data-bxslider-mode="horizontal" data-bxslider-speed="500"
+                            <ul class="bxslider bxslider-book" data-bxslider-mode="horizontal" data-bxslider-speed="500"
                                 data-bxslider-slide-margin="0" data-bxslider-start-slide="0"
                                 data-bxslider-random-start="false" data-bxslider-slide-selector=""
                                 data-bxslider-infinite-loop="true" data-bxslider-hide-control-on-end="false"
@@ -88,8 +96,8 @@
                                 data-bxslider-next-selector="null" data-bxslider-prev-selector="null"
                                 data-bxslider-auto-controls="false" data-bxslider-start-text="Start"
                                 data-bxslider-stop-text="Stop" data-bxslider-auto-controls-combine="false"
-                                data-bxslider-auto-controls-selector="null" data-bxslider-auto="false"
-                                data-bxslider-pause="4000" data-bxslider-auto-start="false"
+                                data-bxslider-auto-controls-selector="null" data-bxslider-auto="true"
+                                data-bxslider-pause="4000" data-bxslider-auto-start="true"
                                 data-bxslider-auto-direction="next" data-bxslider-auto-hover="false"
                                 data-bxslider-auto-delay="0" data-bxslider-min-slides="1" data-bxslider-max-slides="1"
                                 data-bxslider-move-slides="0" data-bxslider-slide-width="0"
@@ -112,7 +120,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="bx-controls bx-has-pager bx-has-controls-direction">
+                        <!--<div class="bx-controls bx-has-pager bx-has-controls-direction">
                             <div class="bx-pager bx-default-pager">
                                 <div class="bx-pager-item">
                                     <a href="" data-slide-index="0" class="bx-pager-link">1</a>
@@ -124,12 +132,25 @@
                                     <a href="" data-slide-index="2" class="bx-pager-link">3</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                         <div class="bx-controls-direction">
                             <a class="bx-prev" href="">Prev</a>
                             <a class="bx-next" href="">Next</a>
                         </div>
                     </div>
+                    <script>
+                        var slider = jQuery('.bxslider-book').bxSlider({
+                            auto: true,
+//                            autoControls: true,
+                            stopAutoOnClick: false,
+//                            pager: true,
+                            onSlideAfter: function() {
+                                slider.stopAuto();
+                                slider.startAuto();
+                            }
+//                            slideWidth: 600
+                        });
+                    </script>
                     <?php //if (function_exists('bxslider')) bxslider('books'); ?>
                     <?php //echo do_shortcode("[xyz-ihs snippet='topkniga1']"); ?>
                     <?php //echo do_shortcode("[xyz-ihs snippet='topkniga2']"); ?>
@@ -148,7 +169,7 @@
             </section>
             <style>
                 #line {
-                    margin-top: 100px;
+                    margin-top: 170px;
                 }
 
                 #line .wpcs_product_carousel_slider .product_image_container .product_thumb_link img {
