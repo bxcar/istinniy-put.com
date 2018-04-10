@@ -81,21 +81,42 @@ if (post_password_required()) {
 
 </div><!-- #product-<?php the_ID(); ?> -->
 <div class="modal-common-gl">
-    <?php if (get_field('chapters')) {
-        foreach (get_field('chapters') as $item) { ?>
-            <div class="modal-content-gl modal-content-gl-scroll <?= $item['number']; ?>">
-                <h2><?= $item['title']; ?></h2>
-                <div class="content"><?= $item['text']; ?></div>
-            </div>
+    <?php
+    $user = wp_get_current_user();
+    if (get_field('chapters')) {
+        foreach (get_field('chapters') as $item) {
+            if ($item['number'] > 4
+                && !in_array( 'premium_user', (array) $user->roles )
+                && !in_array( 'administrator', (array) $user->roles )
+                && !in_array( 'editor', (array) $user->roles )) { ?>
+                <div class="modal-content-gl modal-content-gl-scroll <?= $item['number']; ?>">
+                    <h2 style="margin-bottom: 0; font-size: 26px;">Для просмотра данной главы <a target="_blank" style="text-decoration: underline; color: #5555ff;" href="https://istinniy-put.com/subscription-pay/">приобрести подписку</a></h2>
+                </div>
+            <?php } else { ?>
+                <div class="modal-content-gl modal-content-gl-scroll <?= $item['number']; ?>">
+                    <h2><?= $item['title']; ?></h2>
+                    <div class="content"><?= $item['text']; ?></div>
+                </div>
+            <?php } ?>
         <?php }
     } ?>
     <?php if (get_field('chapters')) {
-        foreach (get_field('chapters') as $item) { ?>
-            <div class="modal-content-gl modal-content-gl-button <?= $item['number']; ?>">
-                <h2><?= $item['title']; ?></h2>
-                <div class="content"><?= $item['text']; ?></div>
-                <span class="close-button">&times;</span>
-            </div>
+        foreach (get_field('chapters') as $item) {
+            if ($item['number'] > 4
+                && !in_array( 'premium_user', (array) $user->roles )
+                && !in_array( 'administrator', (array) $user->roles )
+                && !in_array( 'editor', (array) $user->roles )) { ?>
+                <div class="modal-content-gl modal-content-gl-button <?= $item['number']; ?>">
+                    <h2 style="margin-bottom: 0; font-size: 26px;">Для просмотра данной главы <a target="_blank" style="text-decoration: underline; color: #5555ff;" href="https://istinniy-put.com/subscription-pay/">приобрести подписку</a></h2>
+                    <span class="close-button">&times;</span>
+                </div>
+            <?php } else { ?>
+                <div class="modal-content-gl modal-content-gl-button <?= $item['number']; ?>">
+                    <h2><?= $item['title']; ?></h2>
+                    <div class="content"><?= $item['text']; ?></div>
+                    <span class="close-button">&times;</span>
+                </div>
+            <?php } ?>
         <?php }
     } ?>
 </div>

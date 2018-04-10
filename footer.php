@@ -10,6 +10,10 @@
         display: none;
     }
 
+    #tab-description table td a {
+        text-decoration: underline;
+    }
+
     .woocommerce-product-details__short-description hr:nth-child(3),
     .woocommerce-product-details__short-description .su-button.su-button-style-glass.calameo_a,
     #tab-description h2:first-child {
