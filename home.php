@@ -284,7 +284,7 @@
                         auto: true,
                         minSlides: 3,
                         maxSlides: 3,
-                        moveSlides: 3,
+                        moveSlides: 1,
                         slideWidth: 400,
                         stopAutoOnClick: false,
                         onSlideAfter: function () {
