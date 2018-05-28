@@ -81,6 +81,13 @@ if (post_password_required()) {
 
 </div><!-- #product-<?php the_ID(); ?> -->
 <div class="modal-common-gl">
+    <a class="drivelink" style="display: none" target="_blank" href="<?=get_field('drivelink'); ?>">Скачать аудио</a>
+    <script>
+        var drivelink = jQuery('.drivelink')[0].outerHTML;
+        jQuery(".drivelinkwrap").append(drivelink);
+        jQuery(".modal-common-gl .drivelink").remove();
+        jQuery(".drivelink").css("display", "inline");
+    </script>
     <?php
     $user = wp_get_current_user();
     if (get_field('chapters')) {

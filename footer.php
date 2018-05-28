@@ -303,6 +303,9 @@
             jQuery(".modal-content-gl").css("display", "none");
             jQuery(".modal-common-gl").toggleClass("show-modal");
         });
+
+        jQuery('#wpf_user_name').attr('value', '');
+        jQuery('#wpf_title').attr('value', '');
     });
 </script>
 </body>

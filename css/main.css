@@ -995,3 +995,8 @@ thead tr{
 	position: relative;
 	padding-top: 60px !important;
 }
+
+.contacs-number-link {
+	position: absolute;
+	right: -15px;
+}
