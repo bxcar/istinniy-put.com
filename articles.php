@@ -35,12 +35,30 @@
 
 				<div class="col-xs-12 col-sm-3 articles-menu">
 					<ul>
-					<?php 
+                        <!--echo '<li><a href="/article?catid=' . $category->term_id . '" title="' . sprintf( __( "Смотреть всё для: %s" ), $category->name ) . '" ' . '>' . $category->name.'</a></li> ';-->
+					<?php
 						$args = array('parent' => 54);
 						$categories = get_categories( $args );
-						foreach($categories as $category) { 
-						    echo '<li><a href="/article?catid=' . $category->term_id . '" title="' . sprintf( __( "Смотреть всё для: %s" ), $category->name ) . '" ' . '>' . $category->name.'</a></li> ';						    
-						}			
+						foreach($categories as $category) { ?>
+						    <li>
+                                <a href="/article?catid=<?= $category->term_id ?>"
+                                   title="<?= sprintf( __( "Смотреть всё для: %s" ), $category->name ) ?>"><?= $category->name ?></a>
+                                <ul style="padding-left: 15px; padding-bottom: 20px; padding-top: 10px;">
+                                    <?php
+                                    $posts_args = array('category' => $category->term_id);
+                                    $posts = get_posts( $posts_args );
+                                    foreach($posts as $post) { ?>
+                                        <li style="padding-top: 3px; padding-bottom: 3px;">
+                                            <a href="<?php  the_permalink($post->ID); ?>"><?= $post->post_title ?></a>
+                                        </li>
+                                    <?php }
+                                    ?>
+                                    <li style="padding-top: 3px; padding-bottom: 3px;">
+                                        <a href="/article?catid=<?= $category->term_id ?>">Перейти к остальным статьям этой категории</a>
+                                    </li>
+                                </ul>
+                            </li>
+						<?php }
 					?>					
                     </ul>
 				</div>
@@ -57,10 +75,12 @@
 		          the_post();?>
 			<!--Новый вывод данных-->
                     <?php if(in_category('premium')) { ?>
-                  <div class="row novosti-wrapper" style="box-shadow: 0 0 36px 0 rgba(40, 137, 101, 0.6);">
+                  <div class="row novosti-wrapper" style="box-shadow: 0 0 36px 0 rgba(40, 137, 101, 0.6); position: relative;">
+                      <a href="<?php the_permalink(); ?>" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
                       <span class="premium-title">Премиум</span>
                 <?php } else { ?>
-                    <div class="row novosti-wrapper">
+                    <div class="row novosti-wrapper" style="position: relative">
+                        <a href="<?php the_permalink(); ?>" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
                 <?php } ?>
 			    <?php if (get_the_post_thumbnail(get_the_ID()) != "") { ?>
 			    <div class="col-md-3 col-sm-3 col-xs-12 text-center">
@@ -88,7 +108,7 @@
 
 				    ?>
                                 </div>
-				<div class="post-footer to-left">
+				<div class="post-footer to-left" style="position: relative; z-index: 2;">
                          <div class="button-love to-left top">
                     <p class="love-text">Нравится ли вам это?<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?></p>
 
@@ -122,7 +142,7 @@
 
 				    ?>
                                 </div>
-				<div class="post-footer to-left">
+				<div class="post-footer to-left"  style="position: relative; z-index: 2;">
                          <div class="button-love to-left top">
                     <p class="love-text">Нравится ли вам это?<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?></p>
 

@@ -33,6 +33,7 @@
       foreach ($price as $post):
         the_post();?>
                 <div class="post col-lg-12">
+                    <a href="<?php the_permalink(); ?>" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
                   <div class="post-header">
                     <h6><a href="<?php the_permalink(); ?>"><?= $post->post_title; ?></a></h6>
                   </div>
@@ -41,7 +42,7 @@
                   </div>
                   <div class="info col-lg-10 col-md-10">
                     <p class="font">test<?php the_content("<br/>Читать далее..."); ?></p>
-                    <div class="post-footer to-left">
+                    <div class="post-footer to-left" style="position: relative; z-index: 2;">
                       <div class="button-love to-left top">
                       <p class="love-text">Нравится ли вам это?<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?></p>
                     </div>
@@ -73,6 +74,7 @@
       foreach ($price as $post):
         the_post();?>
                 <div class="post col-lg-12">
+                    <a href="<?php the_permalink(); ?>" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
                   <div class="post-header">
                     <h6><?= $post->post_title; ?></h6>
                   </div>
@@ -81,7 +83,7 @@
                   </div>
                   <div class="info col-lg-10 col-md-10">
                     <p class="font"><?php the_content(); ?></p>
-                    <div class="post-footer to-left">
+                    <div class="post-footer to-left" style="position: relative; z-index: 2;">
                       <div class="button-love to-left top">
                       <p class="love-text">Нравится ли вам это?<?php if(function_exists('wp_ulike')) wp_ulike('get'); ?></p>
                     </div>

@@ -296,12 +296,14 @@
             console.log(number);
             jQuery(".modal-common-gl").toggleClass("show-modal");
             jQuery(".modal-content-gl." + number).css("display", "block");
+            jQuery("body,html").css("overflow", "hidden");
         });
 
         jQuery(".close-button").click(function (event) {
             event.preventDefault();
             jQuery(".modal-content-gl").css("display", "none");
             jQuery(".modal-common-gl").toggleClass("show-modal");
+            jQuery("body,html").css("overflow", "auto");
         });
 
         jQuery('#wpf_user_name').attr('value', '');

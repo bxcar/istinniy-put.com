@@ -92,7 +92,7 @@ if (post_password_required()) {
     $user = wp_get_current_user();
     if (get_field('chapters')) {
         foreach (get_field('chapters') as $item) {
-            if ($item['number'] > 4
+            if ($item['pay'] == 'pay'
                 && !in_array( 'premium_user', (array) $user->roles )
                 && !in_array( 'administrator', (array) $user->roles )
                 && !in_array( 'editor', (array) $user->roles )) { ?>
@@ -109,7 +109,7 @@ if (post_password_required()) {
     } ?>
     <?php if (get_field('chapters')) {
         foreach (get_field('chapters') as $item) {
-            if ($item['number'] > 4
+            if ($item['pay'] == 'pay'
                 && !in_array( 'premium_user', (array) $user->roles )
                 && !in_array( 'administrator', (array) $user->roles )
                 && !in_array( 'editor', (array) $user->roles )) { ?>
@@ -120,7 +120,7 @@ if (post_password_required()) {
             <?php } else { ?>
                 <div class="modal-content-gl modal-content-gl-button <?= $item['number']; ?>">
                     <h2><?= $item['title']; ?></h2>
-                    <div class="content"><?= $item['text']; ?></div>
+                    <div style="visibility: hidden;" class="content"><?= $item['text']; ?></div>
                     <span class="close-button">&times;</span>
                 </div>
             <?php } ?>

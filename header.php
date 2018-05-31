@@ -30,6 +30,32 @@ function scripts_and_styles(){
 <!DOCTYPE html>    
 <html <?php language_attributes(); ?>>
 <head>
+    <?php if(get_the_ID() == '379') {
+        $title_size = get_field('title_size');
+        $desc_size = get_field('description_size');
+    } else {
+        $title_size = 52;
+        $desc_size = 36;
+    }?>
+    <style>
+        .patch-man {
+            margin-top: 4%;
+            margin-bottom: 20px;
+            color: #ffffff;
+            font-size: <?= $title_size ?>px;
+            left: 100%;
+            font-family: 'Segoepr', sans-serif;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        }
+        .shop-title {
+            font-family: 'Segoepr', sans-serif;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+            color: #ffffff;
+            font-size: <?= $desc_size ?>px;
+            left: 100%;
+            margin-bottom: 45px;
+        }
+    </style>
   <base href="<?php bloginfo( 'template_url' ); ?>/" />
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate" />
