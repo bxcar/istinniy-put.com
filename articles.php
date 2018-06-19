@@ -41,7 +41,7 @@
 						$categories = get_categories( $args );
 						foreach($categories as $category) { ?>
 						    <li>
-                                <a href="/article?catid=<?= $category->term_id ?>"
+                                <a style="font-size: 20px;" href="/article?catid=<?= $category->term_id ?>"
                                    title="<?= sprintf( __( "Смотреть всё для: %s" ), $category->name ) ?>"><?= $category->name ?></a>
                                 <ul style="padding-left: 15px; padding-bottom: 20px; padding-top: 10px;">
                                     <?php
@@ -49,12 +49,12 @@
                                     $posts = get_posts( $posts_args );
                                     foreach($posts as $post) { ?>
                                         <li style="padding-top: 3px; padding-bottom: 3px;">
-                                            <a href="<?php  the_permalink($post->ID); ?>"><?= $post->post_title ?></a>
+                                            <a  style="font-size: 16px;" href="<?php  the_permalink($post->ID); ?>"><?= $post->post_title ?></a>
                                         </li>
                                     <?php }
                                     ?>
                                     <li style="padding-top: 3px; padding-bottom: 3px;">
-                                        <a href="/article?catid=<?= $category->term_id ?>">Перейти к остальным статьям этой категории</a>
+                                        <a  style="font-size: 16px;" href="/article?catid=<?= $category->term_id ?>">Перейти к остальным статьям этой категории</a>
                                     </li>
                                 </ul>
                             </li>

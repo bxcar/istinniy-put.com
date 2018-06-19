@@ -15,7 +15,7 @@
     }
 
     .woocommerce-product-details__short-description hr:nth-child(3),
-    .woocommerce-product-details__short-description .su-button.su-button-style-glass.calameo_a,
+    /*.woocommerce-product-details__short-description .su-button.su-button-style-glass.calameo_a,*/
     #tab-description h2:first-child {
         display: none !important;
     }
@@ -310,5 +310,27 @@
         jQuery('#wpf_title').attr('value', '');
     });
 </script>
+<style>
+    /*download page*/
+
+    .container-download {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container-download .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .container-download .product-box .name {
+        font-size: 12px;
+    }
+
+    ul.products-menu-download li a:hover {
+        border-bottom: none;
+    }
+</style>
 </body>
 </html>
