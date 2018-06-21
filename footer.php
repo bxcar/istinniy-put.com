@@ -317,19 +317,150 @@
         display: flex;
         width: 100%;
         box-sizing: border-box;
+        /*flex-wrap: wrap;*/
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding-left: 50px;
+        padding-right: 50px;
     }
+
+    /*.container-download:after {
+        content: "";
+        flex: auto;
+    }*/
 
     .container-download .row {
         margin-left: 0;
         margin-right: 0;
     }
 
-    .container-download .product-box .name {
-        font-size: 12px;
+    .row-photo {
+        width: 430px;
+    }
+
+    .row-photo a {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .row-photo .product-box span {
+        font-size: 14px;
+        text-transform: none;
+        font-family: inherit;
+        display: block;
+        margin-top: 5px;
+    }
+
+    .row-photo .product-box img {
+        width: 120px;
     }
 
     ul.products-menu-download li a:hover {
         border-bottom: none;
+    }
+
+    .audio-download-desc {
+        max-width: 392px;
+        padding-top: 60px;
+        padding-bottom: 30px;
+        position: relative;
+    }
+
+    .audio-download-desc-name {
+        max-width: 285px;
+        display: inline-block;
+        font-size: 17px;
+        color: black;
+    }
+
+    .audio-download-desc-link {
+        background: #288965;
+        color: #fff;
+        position: absolute;
+        padding: 4px 7px;
+        border-radius: 7px;
+        right: 0;
+        display: block;
+        margin-top: -20px;
+    }
+
+    .audio-download-desc-link:hover {
+        color: #fff;
+    }
+
+    .row-audio .audiojs {
+        position: relative;
+        z-index: 100;
+    }
+
+    .row-winrar {
+
+    }
+
+    .container-download .row-winrar-1 {
+        margin-right: 20px;
+    }
+
+    .winrar-dwn-link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        height: 70px;
+    }
+
+    .winrar-dwn-link img {
+        width: 70px;
+        margin-right: 10px;
+    }
+
+    .winrar-dwn-link span {
+        font-size: 16px;
+        color: black;
+    }
+
+    .dwn-title {
+        font-family: 'Roboto-Bold',sans-serif;
+        text-decoration: none;
+        color: black;
+        font-size: 20px !important;
+    }
+
+    @media (max-width: 500px) {
+        .row-audio .audiojs {
+            width: 300px;
+        }
+
+        .audio-download-desc {
+            max-width: 300px;
+        }
+
+        .row-photo .product-box img {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .row-photo .product-box span {
+            font-size: 18px;
+        }
+
+        .container-download .row {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .audio-download-desc-name {
+            max-width: 210px;
+        }
+
+        .container-download .row-winrar-1 {
+            margin-right: auto;
+        }
+
+        .container-download {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     }
 </style>
 </body>

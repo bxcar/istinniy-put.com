@@ -8,68 +8,77 @@ Template Post Type: post, page
 get_header();
 
 ?>
-    <span class="contentsp title"> </span>
+    <!--<span class="contentsp title"> </span>
     <ul class="products-menu products-menu-download">
         <li><a>Фото</a></li>
         <li><a>Аудио</a></li>
         <li><a>Скачать книгу</a></li>
         <li><a>Видео</a></li>
-    </ul>
+    </ul>-->
     <div class="container-download">
-        <div class="row" style="width: 33%;">
+        <div class="row row-photo">
+            <h2 class="dwn-title">Фото</h2>
             <?php
             if (get_field('photo_download', 277)) {
                 foreach (get_field('photo_download', 277) as $item) { ?>
                     <a target="_blank"
-                       href="<?= $item['link']; ?>"
-                       class="col-md-3 col-sm-6 centered" style="z-index: 1;">
+                       href="<?= $item['link']; ?>" style="z-index: 1;">
                         <div class="product-box">
                             <img src="<?= $item['img']; ?>">
-                            <span class="name"><?= $item['text']; ?></span>
+                            <span><?= $item['text']; ?></span>
                         </div>
                     </a>
                 <?php }
             } ?>
         </div>
-        <!--<div class="row">
+        <div class="row row-audio">
+            <h2 class="dwn-title">Аудио</h2>
+            <script>
+                var a = audiojs;
+                a.events.ready(function () {
+                    var a1 = a.createAll();
+                });
+            </script>
             <?php
-/*            if (get_field('photo_download', 277)) {
-                foreach (get_field('photo_download', 277) as $item) { */?>
-                    <div class="col-md-3 col-sm-6 centered" style="z-index: 1;">
-                        <div class="product-box">
-                            <img src="<?/*= $item['img']; */?>">
-                            <span class="name"><?/*= $item['text']; */?></span>
-                        </div>
+            if (get_field('audio_download', 277)) {
+                foreach (get_field('audio_download', 277) as $item) { ?>
+                    <audio src="<?= $item['link']; ?>"
+                           preload="auto"></audio>
+                    <div class="audio-download-desc">
+                        <span class="audio-download-desc-name"><?= $item['text']; ?></span>
+                        <a class="audio-download-desc-link" href="<?= $item['link']; ?>">Скачать</a>
                     </div>
-                <?php /*}
-            } */?>
-        </div>-->
-        <!--<div class="row">
+                <?php }
+            } ?>
+        </div>
+        <div class="row row-winrar row-winrar-1">
+            <h2 class="dwn-title">Скачать книгу</h2>
             <?php
-        /*            if(get_field('photo_download', 277)) {
-                        foreach(get_field('photo_download', 277) as $item) { */ ?>
-                    <div class="col-md-3 col-sm-6 centered" style="z-index: 1;">
-                        <div class="product-box">
-                            <img src="<? /*= $item['img']; */ ?>">
-                            <span class="name"><? /*= $item['text']; */ ?></span>
-                        </div>
-                    </div>
-                <?php /*}
-            } */ ?>
-        </div>-->
-        <!--<div class="row">
+            if (get_field('book_download', 277)) {
+                foreach (get_field('book_download', 277) as $item) { ?>
+                    <a target="_blank"
+                       href="<?= $item['link']; ?>"
+                       class="winrar-dwn-link" style="z-index: 1;">
+                        <img src="<?= get_template_directory_uri(); ?>/images/winrar-icon.png">
+                        <span><?= $item['text']; ?></span>
+                    </a>
+                <?php }
+            } ?>
+        </div>
+        <div class="row row-winrar">
+            <h2 class="dwn-title">Видео</h2>
             <?php
-        /*            if(get_field('photo_download', 277)) {
-                        foreach(get_field('photo_download', 277) as $item) { */ ?>
-                    <div class="col-md-3 col-sm-6 centered" style="z-index: 1;">
-                        <div class="product-box">
-                            <img src="<? /*= $item['img']; */ ?>">
-                            <span class="name"><? /*= $item['text']; */ ?></span>
-                        </div>
-                    </div>
-                <?php /*}
-            } */ ?>
-        </div>-->
+            if (get_field('video_download', 277)) {
+                foreach (get_field('video_download', 277) as $item) { ?>
+                    <a target="_blank"
+                       href="<?= $item['link']; ?>"
+                       class="winrar-dwn-link" style="z-index: 1;">
+                        <img src="<?= get_template_directory_uri(); ?>/images/video-icon.jpg">
+                        <span><?= $item['text']; ?></span>
+                    </a>
+                <?php }
+            } ?>
+        </div>
     </div>
 
 
