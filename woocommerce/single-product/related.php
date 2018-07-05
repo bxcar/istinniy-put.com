@@ -21,28 +21,68 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( $related_products ) : ?>
-
+</div/>
 	<section class="related products">
 
 		<h2><?php esc_html_e( 'Related products', 'woocommerce' ); ?></h2>
-
-		<?php woocommerce_product_loop_start(); ?>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+		<?php //woocommerce_product_loop_start(); ?>
 
 			<?php foreach ( $related_products as $related_product ) : ?>
 
 				<?php
-				 	$post_object = get_post( $related_product->get_id() );
+				 //echo '<pre>'.print_r($related_product->name).'</pre>';
 
-					setup_postdata( $GLOBALS['post'] =& $post_object );
+				 // 	$post_object = get_post( $related_product->get_id() );
 
-					wc_get_template_part( 'content', 'product' ); ?>
+					// setup_postdata( $GLOBALS['post'] =& $post_object );
+
+					// wc_get_template_part( 'content', 'product' ); ?>
+
+ 
+      <div class="swiper-slide">
+      	<div class="img-product">
+			<img src="<?= get_the_post_thumbnail_url($related_product->id); ?>">
+      	</div>
+      	<div class="product-title">
+      		<a href="<?php the_permalink($related_product->id); ?>">
+      	<?=$related_product->name?>
+      		</a>
+      	</div>
+      	<div class="price">
+      	<span><?=$related_product->price?></span>
+      	</div>
+      	<div class="add-to-cart-related-pro">
+      <?php
+      echo apply_filters( 'woocommerce_loop_add_to_cart_link',
+    sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s">%s</a>',
+        esc_url( $related_product->add_to_cart_url() ),
+        esc_attr( $related_product->id ),
+        esc_attr( $related_product->get_sku() ),
+        $related_product->is_purchasable() ? 'add_to_cart_button' : '',
+        esc_attr( $related_product->product_type ),
+        esc_html( $related_product->add_to_cart_text() )
+    ),
+$product );?>
+
+      	</div>
+
+      </div>
+
 
 			<?php endforeach; ?>
 
-		<?php woocommerce_product_loop_end(); ?>
+		<?php // woocommerce_product_loop_end(); ?>
+    </div>
+    <!-- Add Pagination -->
+    <!-- <div class="swiper-pagination"></div> -->
+      <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 
 	</section>
-
 <?php endif;
 
 wp_reset_postdata();
+

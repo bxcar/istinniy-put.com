@@ -426,6 +426,10 @@
         font-size: 20px !important;
     }
 
+    .bx-loading {
+        display: none;
+    }
+
     @media (max-width: 500px) {
         .row-audio .audiojs {
             width: 300px;
@@ -462,6 +466,114 @@
             padding-right: 20px;
         }
     }
-</style>
+</style> 
+<!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
+<!-- <script src="http://verstka.hardweb.pro/html/almus/js/jquery-3.3.1.min.js"></script> -->
+<script src="<?php bloginfo('template_url') ?>/js/script.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/swiper.min.js"></script>
+<script src="<?php bloginfo('template_url') ?>/js/rating.js"></script>
+<script>
+// $( ".boks-cat" ).each(function() {
+//     $(this).click(function(){
+//         $( "#pa_optsii_v_tverdyiy-pereplet204" ).trigger( "click" );
+//     });
+// });
+
+$(function(){                   // Start when document ready
+    $('#star-rating').rating(); // Call the rating plugin
+}); 
+
+$(function(){
+    $('#star-rating').rating(function(vote, event){
+        // we have vote and event variables now, lets send vote to server.
+        $.ajax({
+            url: "woocommerce/single-product/rating.php",
+            type: "GET",
+            data: {rate: vote},
+        });
+    });
+});
+ $('.container1').rating(function(vote, event){
+    // console.log(vote, event);
+})
+$('.container1').rating(function(vote, event){
+    // write your ajax code here
+    // For example;
+    // $.get(document.URL, {vote: vote});
+});
+
+if ($(window).width() > 960) {
+   $(document).ready(function () {
+
+        $(function () {
+var swiper = new Swiper('.products .swiper-container', {
+      slidesPerView: 7,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+      // loop: true,
+      // loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+ })
+
+    });
+} 
+if ($(window).width() < 960) {
+   $(document).ready(function () {
+
+        $(function () {
+var swiper = new Swiper('.products .swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+      // loop: true,
+      // loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+ })
+
+    });
+} 
+if ($(window).width() < 500) {
+   $(document).ready(function () {
+
+        $(function () {
+var swiper = new Swiper('.products .swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+      // loop: true,
+      // loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+ })
+
+    });
+}
+
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  
 </body>
 </html>

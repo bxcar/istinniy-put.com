@@ -59,7 +59,7 @@ get_header();
                     <a target="_blank"
                        href="<?= $item['link']; ?>"
                        class="winrar-dwn-link" style="z-index: 1;">
-                        <img src="<?= get_template_directory_uri(); ?>/images/winrar-icon.png">
+                        <img src="<?= $item['img']; ?>">
                         <span><?= $item['text']; ?></span>
                     </a>
                 <?php }
@@ -73,7 +73,7 @@ get_header();
                     <a target="_blank"
                        href="<?= $item['link']; ?>"
                        class="winrar-dwn-link" style="z-index: 1;">
-                        <img src="<?= get_template_directory_uri(); ?>/images/video-icon.jpg">
+                        <img src="<?= $item['img']; ?>">
                         <span><?= $item['text']; ?></span>
                     </a>
                 <?php }

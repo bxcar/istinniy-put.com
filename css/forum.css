@@ -11,7 +11,7 @@
 	padding:55px 0;
 	background: url(../images/forumBg.jpg);
 	background-size: cover;
-	display: flex;
+	display: none;
 	justify-content: center;
 	color: #fff;
 }

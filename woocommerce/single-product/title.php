@@ -19,5 +19,31 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+global $product;
+$id = $product->get_id();
+$rating= get_field('rating');
 
+echo '   <div class="titlecolumn">
+              <p>Бестселлер</p>';
 the_title( '<h1 class="product_title entry-title">', '</h1>' );
+// var_dump($rating);
+
+echo '<div class="detailpanel">
+                <div class="stars-block">
+                  <div class="my-rating" data-rating="'.$rating.'"></div>
+                  <div class="raiting">
+                   <div class="stars-container">
+                  </div>
+                  </div>
+                  
+                </div>
+                '.do_shortcode("[ti_wishlists_addtowishlist loop=yes]").'
+                <a class="send">                   
+<script src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+<script src="//yastatic.net/share2/share.js"></script>
+<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-limit="0"> </div>
+                </a>
+                <p class="code">Код товара: <span>'.$id.'</span></p>
+              </div>
+            </div>   <div class="charactercolumn">
+';

@@ -27,6 +27,7 @@ if ( ! $post->post_excerpt ) {
 }
 
 ?>
+ <div class="left-block">    
 <div class="woocommerce-product-details__short-description">
     <?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ); ?><hr/>
 	<?php if (get_post_meta($post->ID, "calameo1", true) != "") { ?><a href="<?php echo get_post_meta($post->ID, "calameo1", true); ?>" class="su-button su-button-style-glass calameo_a" target="_blank"><span class="calameo_span">Читать на мониторе<small class="calameo_span2">Перейти на сайт Calameo</small></span></a><?php } ?>

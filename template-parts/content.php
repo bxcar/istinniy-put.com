@@ -49,6 +49,27 @@ if (in_category('premium')
             <?php
             endif;*/ ?>
         </header><!-- .entry-header -->
+        <?php if(get_field('audio_link')) { ?>
+            <div class="audio">
+                <script>
+                    var a = audiojs;
+                    a.events.ready(function () {
+                        var a1 = a.createAll();
+                    });
+                </script>
+                <audio src="<?= get_field('audio_link'); ?>"
+                       preload="auto"></audio>
+            </div>
+            <style>
+                .audio {
+                    margin-bottom: 20px;
+                }
+
+                .audio .audiojs {
+                    float: none !important;
+                }
+            </style>
+        <?php } ?>
 
         <div class="entry-content">
             <?php

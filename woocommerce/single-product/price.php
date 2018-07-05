@@ -23,7 +23,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<div class="flypage-price"><?php echo $product->get_price_html(); ?></div>
-<div class="flypage_add_to_cart">
+<div class="right-block">
+<div class="sidebar2">
+  <div class="sale-block">
+<div class="flypage-price old-price"><?php echo $product->get_price_html(); ?></div>
+<div class="sale-block-text">
+
+<div class="text-sale">
+  <span>В наличии</span>
+<br>Курьер доставит завтра
+</div>
+</div>
+<div class="flypage_add_to_cart add-to-cart">
    <?php do_action( 'woocommerce_before_single_product_cart' ); ?>
+</div>
+
+</div>
+
+  </div>
+
 </div>

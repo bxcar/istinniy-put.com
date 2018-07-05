@@ -145,6 +145,7 @@ function bible_scripts() {
 	wp_enqueue_script( 'bible-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bible-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_localize_script('bible-skip-link-focus-fix', 'ajax',array('url' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('DoW3*Sdhjk5d_')));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -228,4 +229,94 @@ function tp_editor_background_color_button( $buttons, $id )
     /* Add the button/option after 4th item */
     array_splice( $buttons, 4, 0, 'backcolor' );
     return $buttons;
+}
+
+
+/*
+* Ajax get query posts
+*/
+add_action('wp_ajax_nopriv_get_query_ip', 'get_query_ip');
+add_action('wp_ajax_get_query_ip', 'get_query_ip');
+function get_query_ip()
+{ 
+    $args = array();
+
+	$args['posts_per_page'] = -1;
+
+	if (isset($_POST['posts_per_page']) && $_POST['posts_per_page']) {
+		$args['posts_per_page'] = $_POST['posts_per_page'];
+	}
+
+    if(isset($_POST['query']) && $_POST['query']){
+    	$args = json_decode($_POST['query'], true);
+    }
+
+    if ($_POST['category'] && $_POST['taxonomy']) {
+    	$args['tax_query'] = array(
+			array(
+				'taxonomy' => $_POST['taxonomy'],
+				'field'    => 'id',
+				'terms'    => $_POST['category'],
+			)
+		);
+    }
+
+    if (!isset($_POST['orderby'])) {
+	    $args['orderby'] = 'id';
+	    $args['order'] = 'ASC';
+    }
+    if ($_POST['sortbymeta']) {
+    	$args['meta_key'] 	= 'article_order';
+    	$args['meta_type'] 	= 'NUMERIC';
+    	$args['orderby'] 	= 'meta_value_num';
+    	$args['order'] 		= 'DESC';
+    }
+	    $args['post_status'] = 'any';
+
+    if ( isset($_POST['postid']) && $_POST['postid'] ) {
+	    $args['p'] = $_POST['postid'];
+    }
+
+    if ( isset($_POST['posttype']) && $_POST['posttype'] ) {
+	    $args['post_type'] = $_POST['posttype'];
+    }
+
+    wp_reset_query();
+	query_posts($args);
+	if( have_posts() ){
+		global $withcomments;
+		$withcomments = true; 
+		while(  have_posts() ){  the_post();
+			get_template_part($_POST['template']);
+		}
+		if ( (comments_open() || get_comments_number()) && $_POST['postid']  ) :
+			comments_template();
+		endif;
+		wp_reset_postdata();
+	}else{
+	 echo 'Записей нет.';
+	}
+	die();
+
+
+}
+function woo_related_products_limit() {
+  global $product;
+	
+	$args['posts_per_page'] = 6;
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+	$args['posts_per_page'] = 14; // 4 related products
+	$args['columns'] = 2; // arranged in 2 columns
+	return $args;
+}
+
+
+add_action('acf/register_fields', 'my_register_fields');
+
+function my_register_fields()
+{
+	include_once('acf-field-star-rating/acf-star_rating.php');
 }

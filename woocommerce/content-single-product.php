@@ -48,8 +48,8 @@ if (post_password_required()) {
     do_action('woocommerce_before_single_product_summary');
     ?>
 
-    <div class="summary entry-summary flypage-info col-md-8 col-sm-8 col-xs-12">
-
+ <div class="InfoColumn">
+    <div class="summary entry-summary flypage-info col-md-7 col-sm-8 col-xs-12">
         <?php
         /**
          * woocommerce_single_product_summary hook.
@@ -65,9 +65,10 @@ if (post_password_required()) {
          */
         do_action('woocommerce_single_product_summary');
         ?>
+</div>
 
     </div><!-- .summary -->
-
+<!-- <div class="nima-bu"> -->
     <?php
     /**
      * woocommerce_after_single_product_summary hook.
@@ -78,8 +79,9 @@ if (post_password_required()) {
      */
     do_action('woocommerce_after_single_product_summary');
     ?>
-
-</div><!-- #product-<?php the_ID(); ?> -->
+<!-- </div> -->
+</div>
+<!-- #product-<?php the_ID(); ?> -->
 <div class="modal-common-gl">
     <a class="drivelink" style="display: none" target="_blank" href="<?=get_field('drivelink'); ?>">Скачать аудио</a>
     <script>

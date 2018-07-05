@@ -17,4 +17,4 @@
  */
 ?>
 
-<ul class="products">
+<div class="products">

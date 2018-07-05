@@ -13,19 +13,35 @@ function scripts_and_styles(){
   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', null, null, 'all' );
   wp_enqueue_style( 'main', get_template_directory_uri() . '/css/main.css', null, null, 'all' );
   wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', null, null, 'all' );
+  wp_enqueue_style( 'style_new', get_template_directory_uri() . '/css/style_new.css', null, null, 'all' );
   wp_enqueue_style( 'forum', get_template_directory_uri() . '/css/forum.css', null, null, 'all' );
+  wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/css/swiper.min.css', null, null, 'all' );
+  wp_enqueue_style( 'swiper-css', get_template_directory_uri() . '/css/swiper.css', null, null, 'all' );
+  // wp_enqueue_style( 'rating', get_template_directory_uri() . '/css/rating.css', null, null, 'all' );
+  wp_enqueue_style( 'rating', get_template_directory_uri() . '/css/star-rating-svg.css', null, null, 'all' );
+  ?>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <?php 
   
   
 
   
   wp_dequeue_script( 'jquery' );
   wp_deregister_script( 'jquery' );
-  wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.12.3.min.js', null, null, true );
+//   wp_enqueue_script( 'jquery-old', get_template_directory_uri() . '/js/jquery-1.12.3.min.js', null, null, true );
+  wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', null, null, true );
+  wp_enqueue_script( 'rating-script', get_template_directory_uri() . '/js/jquery.star-rating-svg.js'); 
+  wp_enqueue_script( 'min-rating-script', get_template_directory_uri() . '/js/jquery.star-rating-svg.min.js', array('min-star-rating-svg'), null, true ); 
   wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), null, true );
   wp_enqueue_script( 'jem', get_template_directory_uri() . '/js/jquery-event-manager.ru.js', array('jquery'), null, true ); 
+  wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/js/swiper.js', array('swiper-jquery'), null, true ); 
+  wp_enqueue_script( 'swiper-script', get_template_directory_uri() . '/js/swiper.min.js', array('swiper-jquery'), null, true ); 
+  wp_enqueue_script( 'my-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true ); 
 }     
 
 ?>
+
 
 <!DOCTYPE html>    
 <html <?php language_attributes(); ?>>

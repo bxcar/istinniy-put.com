@@ -20,7 +20,7 @@ get_header(); ?>
     <?php if (is_singular("product")) {
         if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div
-            class="container-fluid forem-description shop-bg"<?php $img = wp_get_attachment_image_src(get_post_meta(get_the_ID(), "previmg", true), 'full');
+            class="container-fluid atrx forem-description shop-bg"<?php $img = wp_get_attachment_image_src(get_post_meta(get_the_ID(), "previmg", true), 'full');
             if ($img[0] != "") { ?> style="background-image:url('<?php echo $img[0]; ?>')"<?php } ?>>
             <div class="description-container">
                 <?php $postdata = get_post($post_id = 195); ?>
@@ -45,7 +45,7 @@ get_header(); ?>
         </div>
         </div><?php } ?>
 <? } ?>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" style="padding-top: 30px;">
             <? if (isset($_GET['chapters'])) { ?>
                 <div class="sidebar_shop col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -100,7 +100,11 @@ get_header(); ?>
                         <?php endwhile; endif;
                         wp_reset_query();
                     } else {
+echo '<div class="block-cards">      
+        <div class="cards">
+        <div class="cards-block">';
                         woocommerce_content();
+echo "</div></div></div>";
                     } ?>
                 </div>
             <? } ?>
