@@ -335,7 +335,8 @@
     }
 
     .row-photo {
-        width: 430px;
+        /*width: 430px;*/
+        width: 440px;
     }
 
     .row-photo a {
@@ -362,7 +363,7 @@
 
     .audio-download-desc {
         max-width: 392px;
-        padding-top: 60px;
+        padding-top: 10px;
         padding-bottom: 30px;
         position: relative;
     }
@@ -375,7 +376,8 @@
     }
 
     .audio-download-desc-link {
-        background: #288965;
+        background: #3d96d2;
+        /*background: #288965;*/
         color: #fff;
         position: absolute;
         padding: 4px 7px;
