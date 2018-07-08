@@ -362,7 +362,7 @@
     }
 
     .audio-download-desc {
-        max-width: 392px;
+        /*max-width: 392px;*/
         padding-top: 10px;
         padding-bottom: 30px;
         position: relative;
@@ -376,7 +376,8 @@
     }
 
     .audio-download-desc-link {
-        background: #3d96d2;
+        background: #469549;
+        /*background: #3d96d2;*/
         /*background: #288965;*/
         color: #fff;
         position: absolute;
@@ -432,13 +433,41 @@
         display: none;
     }
 
+    .audio-preview {
+        display: flex;
+        align-items: center;
+    }
+
+    .view-audio {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .view-audio img {
+        margin-left: 5px;
+    }
+
+    .view-audio:hover {
+        color: #272727 !important;
+    }
+
+    .audio-preview img {
+        width: 120px;
+        margin-right: 20px;
+    }
+
+    .audios-list {
+        display: none;
+    }
+
     @media (max-width: 500px) {
         .row-audio .audiojs {
             width: 300px;
         }
 
         .audio-download-desc {
-            max-width: 300px;
+            /*max-width: 300px;*/
         }
 
         .row-photo .product-box img {
