@@ -11,15 +11,16 @@ $(function () {
 
 $(".my-rating").starRating({
     totalStars: 5,
+    initialRating: 4,
     strokeColor: '#fec71c',
     strokeWidth: 10,
     starSize: 21,
     // starShape: 'rounded',
     // starSize: 25,
     // emptyColor: 'lightgray',
-    hoverColor: 'salmon',
-    // activeColor: 'crimson',
-    // useGradient: false
+    hoverColor: '#fec71c',
+    activeColor: '#fec71c',
+    useGradient: false
 });
 
 $('.mgallery > span').mouseover(function () {
@@ -39,14 +40,14 @@ $('[data-fancybox="gallery"]').fancybox({
 });
 $(function () {
     var button = $('.characters .toggler'),
-        animateTime = 140;
+        animateTime = 150;
 
     $(button).click(function () {
         reset(animateTime);
         $('.characters .toggler').text("развернуть");
 
         var text = $(this).parent().find('div.characters-item');
-        if (text.height() === 140) {
+        if (text.height() === 150) {
             autoHeightAnimate(text, animateTime);
             $(this).text("свернуть");
             $('.characters .toggler').addClass("open");
@@ -54,7 +55,7 @@ $(function () {
         } else {
             $('.characters .toggler').removeClass("open");
 
-            text.stop().animate({height: '140px'}, animateTime);
+            text.stop().animate({height: '150px'}, animateTime);
             $('.characters .toggler').text("развернуть");
         }
     });
@@ -114,6 +115,33 @@ $(document).ready(function () {
             $(this).next().animate({height: 'hide'}, 500);
 
             $(this).find('img').animate({borderSpacing: 0}, {
+                step: function (now, fx) {
+                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                },
+                duration: 'slow'
+            }, 'linear');
+        }
+        e.stopPropagation();
+    });
+
+    $('.audio-preview').click(function (e) {
+        e.preventDefault();
+        // $(this).toggleClass('active');
+        if ($(this).next().next().css('display') == 'none') {
+
+            $(this).next().next().animate({height: 'show'}, 500);
+
+            $(this).next().find('img').animate({borderSpacing: 90}, {
+                step: function (now, fx) {
+                    $(this).css('transform', 'rotate(' + now + 'deg)');
+                },
+                duration: 'slow'
+            }, 'linear');
+        }
+        else {
+            $(this).next().next().animate({height: 'hide'}, 500);
+
+            $(this).next().find('img').animate({borderSpacing: 0}, {
                 step: function (now, fx) {
                     $(this).css('transform', 'rotate(' + now + 'deg)');
                 },

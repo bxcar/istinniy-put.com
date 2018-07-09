@@ -461,6 +461,10 @@
         display: none;
     }
 
+    .audio-preview:hover {
+        cursor: pointer;
+    }
+
     @media (max-width: 500px) {
         .row-audio .audiojs {
             width: 300px;

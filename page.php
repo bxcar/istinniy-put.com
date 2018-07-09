@@ -11,7 +11,7 @@
  *
  * @package bible
  */
-
+header('Location: /');
 get_header(); ?>
 
 	<div class="all_content">

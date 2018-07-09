@@ -132,40 +132,40 @@ get_header();
                             <?php }
                         } ?>
                     </div>
-                    <div class="sm2-bar-ui" style="visibility: hidden; height: 0;">
-                        <div class="bd sm2-main-controls">
-                            <div class="sm2-inline-element sm2-button-element">
-                                <div class="sm2-button-bd">
-                                    <a href="#play" class="sm2-inline-button sm2-icon-play-pause">Play /
-                                        pause</a>
-                                </div>
-                            </div>
-                            <div class="sm2-inline-element sm2-inline-status">
-                                <div class="sm2-progress">
-                                    <div class="sm2-row">
-                                        <div class="sm2-inline-time">0:00</div>
-                                        <div class="sm2-progress-bd">
-                                            <div class="sm2-progress-track">
-                                                <div class="sm2-progress-bar"></div>
-                                                <div class="sm2-progress-ball">
-                                                    <div class="icon-overlay"></div>
-                                                </div>
-                                            </div>
+                <?php }
+            } ?>
+            <div class="sm2-bar-ui" style="visibility: hidden; height: 0;">
+                <div class="bd sm2-main-controls">
+                    <div class="sm2-inline-element sm2-button-element">
+                        <div class="sm2-button-bd">
+                            <a href="#play-1" class="sm2-inline-button sm2-icon-play-pause">Play /
+                                pause</a>
+                        </div>
+                    </div>
+                    <div class="sm2-inline-element sm2-inline-status">
+                        <div class="sm2-progress">
+                            <div class="sm2-row">
+                                <div class="sm2-inline-time">0:00</div>
+                                <div class="sm2-progress-bd">
+                                    <div class="sm2-progress-track">
+                                        <div class="sm2-progress-bar"></div>
+                                        <div class="sm2-progress-ball">
+                                            <div class="icon-overlay"></div>
                                         </div>
-                                        <div class="sm2-inline-duration">0:00</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="sm2-inline-element sm2-button-element sm2-volume">
-                                <div class="sm2-button-bd">
-                                    <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
-                                    <a href="#volume" class="sm2-inline-button sm2-volume-control">volume</a>
-                                </div>
+                                <div class="sm2-inline-duration">0:00</div>
                             </div>
                         </div>
                     </div>
-                <?php }
-            } ?>
+                    <div class="sm2-inline-element sm2-button-element sm2-volume">
+                        <div class="sm2-button-bd">
+                            <span class="sm2-inline-button sm2-volume-control volume-shade"></span>
+                            <a href="#volume-1" class="sm2-inline-button sm2-volume-control">volume</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row row-winrar row-winrar-1">
             <h2 class="dwn-title">Скачать книгу</h2>

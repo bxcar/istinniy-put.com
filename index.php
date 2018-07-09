@@ -4,7 +4,8 @@
  * Displays all HTML content
  * Theme Name: SomeTheme
  */
-?> 
+header('Location: /');
+?>
 
 <?php get_header(); ?>
  <?php if( function_exists('bxslider') ) bxslider('slider'); ?>
