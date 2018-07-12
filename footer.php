@@ -465,6 +465,11 @@
         cursor: pointer;
     }
 
+    .audio-pay-link {
+        color: #288965;
+        text-decoration: underline;
+    }
+
     @media (max-width: 500px) {
         .row-audio .audiojs {
             width: 300px;
@@ -542,7 +547,7 @@ if ($(window).width() > 960) {
 
         $(function () {
 var swiper = new Swiper('.products .swiper-container', {
-      slidesPerView: 7,
+      slidesPerView: 6,
       spaceBetween: 30,
       slidesPerGroup: 1,
       // loop: true,
